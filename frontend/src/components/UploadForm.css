@@ -1,0 +1,44 @@
+/* components/UploadForm.css */
+
+.upload-form-wrap { width: 100%; }
+
+.upload-dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  background: var(--card);
+  outline: none;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone:focus,
+.upload-dropzone.drag-over {
+  border-color: var(--green-mid);
+  background: var(--green-light);
+}
+
+.upload-dropzone-icon { font-size: 40px; margin-bottom: 12px; }
+
+.upload-dropzone-label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.upload-dropzone-hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.upload-error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--red);
+  padding: 8px 12px;
+  background: var(--red-light);
+  border-radius: var(--radius-sm);
+}

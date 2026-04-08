@@ -1,0 +1,201 @@
+/* pages/Profile.css */
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-card { }
+
+.profile-avatar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.profile-name { font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+.profile-email { font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+.profile-joined { font-size: 12px; color: var(--subtle); }
+
+.profile-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.p-stat {
+  flex: 1;
+  text-align: center;
+  padding: 14px 8px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-stat:last-child { border-right: none; }
+
+.p-stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1;
+}
+
+.p-stat-label { font-size: 11px; color: var(--subtle); }
+
+.profile-info { display: flex; flex-direction: column; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  gap: 12px;
+}
+
+.info-row:last-child { border-bottom: none; }
+.info-label { color: var(--muted); flex-shrink: 0; }
+.info-val { font-weight: 500; text-align: right; }
+
+/* Right column */
+.profile-right { display: flex; flex-direction: column; gap: 16px; }
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.coming-soon {
+  font-size: 11px;
+  background: var(--amber-light);
+  color: var(--amber);
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.contacts-preview { display: flex; flex-direction: column; gap: 2px; }
+
+.contact-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-preview-row:last-child { border-bottom: none; }
+
+.cp-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Resources */
+.safety-resources { }
+
+.resource-list { display: flex; flex-direction: column; gap: 2px; }
+
+.resource-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.15s;
+  border-radius: 4px;
+}
+
+.resource-item:last-child { border-bottom: none; }
+.resource-item:hover { color: var(--green); }
+.resource-item span { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.resource-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.resource-desc { font-size: 12px; color: var(--muted); }
+
+/* PDF Export card */
+.pdf-export-card { text-align: center; }
+
+.pdf-icon { font-size: 36px; margin-bottom: 10px; }
+
+.pdf-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pdf-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.pdf-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.pdf-empty {
+  font-size: 13px;
+  color: var(--subtle);
+  margin: 8px 0;
+}
+
+.pdf-note {
+  font-size: 11px;
+  color: var(--subtle);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* renamed from profile-right for clarity */
+.profile-left { display: flex; flex-direction: column; }
+
+@media (max-width: 720px) {
+  .profile-layout { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,196 @@
+/* components/ContactsManager.css */
+
+.contacts-manager { }
+
+.cm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cm-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.cm-subtitle { font-size: 12px; color: var(--muted); }
+
+.cm-add-btn { padding: 7px 14px; font-size: 13px; }
+
+/* Form */
+.cm-form {
+  background: var(--green-light);
+  border: 1px solid var(--teal-light);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 14px;
+  animation: fadeSlideIn 0.2s ease;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cm-form-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.cm-error {
+  font-size: 13px;
+  color: var(--red);
+  background: var(--red-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.cm-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 12px;
+}
+
+.cm-form .field { margin-bottom: 10px; }
+.cm-form .field label { font-size: 12px; }
+.cm-form .field input { font-size: 13px; padding: 8px 12px; }
+
+.cm-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cm-form-actions .btn { padding: 9px 18px; font-size: 13px; }
+
+/* List */
+.cm-loading {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.cm-list { display: flex; flex-direction: column; }
+
+.cm-empty {
+  padding: 20px 0 8px;
+  text-align: center;
+}
+
+.cm-empty-text { font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 4px; }
+.cm-empty-hint { font-size: 12px; color: var(--subtle); }
+
+.cm-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cm-item:last-child { border-bottom: none; }
+
+.cm-item.hotline { opacity: 0.72; }
+
+.cm-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.hotline-av {
+  background: var(--red-light);
+  font-size: 18px;
+}
+
+.cm-details { flex: 1; min-width: 0; }
+.cm-name { font-size: 14px; font-weight: 600; margin-bottom: 1px; }
+.cm-phone { font-size: 13px; color: var(--muted); margin-bottom: 1px; }
+.cm-rel { font-size: 11px; color: var(--subtle); }
+
+.cm-actions { display: flex; gap: 4px; flex-shrink: 0; }
+
+.cm-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 7px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.cm-action-btn:hover { background: var(--bg); }
+.cm-action-btn.danger:hover { background: var(--red-light); }
+
+.cm-delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--red);
+}
+
+.cm-btn-yes, .cm-btn-no {
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cm-btn-yes { background: var(--red-light); color: var(--red); border-color: #f7c1c1; }
+.cm-btn-yes:hover { background: #f7c1c1; }
+.cm-btn-no:hover { background: var(--bg); }
+
+.cm-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--subtle);
+}
+
+.cm-divider::before, .cm-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cm-fixed-badge {
+  font-size: 10px;
+  background: var(--border);
+  color: var(--subtle);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .cm-form-grid { grid-template-columns: 1fr; }
+}
