@@ -36,6 +36,8 @@ const applySecurityMiddleware = (app) => {
     crossOriginResourcePolicy: { policy: 'cross-origin' }, // Allow serving uploaded files
   }));
 
+  app.use(sanitizeMiddleware);
+
   // ── 2. GLOBAL RATE LIMIT — All API routes ───────────────────────────────────
   // Prevents API abuse: max 100 requests per 15 minutes per IP
   const globalLimiter = rateLimit({
@@ -143,6 +145,25 @@ const uploadLimiter = rateLimit({
   },
   skip: () => process.env.NODE_ENV === 'test',
 });
+
+const sanitize = (obj) => {
+  if (!obj || typeof obj !== 'object') return;
+
+  for (let key in obj) {
+    if (key.startsWith('$') || key.includes('.')) {
+      delete obj[key];
+    } else if (typeof obj[key] === 'object') {
+      sanitize(obj[key]); // recursive
+    }
+  }
+};
+
+const sanitizeMiddleware = (req, res, next) => {
+  sanitize(req.body);
+  sanitize(req.params);
+  sanitize(req.headers); // optional
+  next();
+};
 
 module.exports = {
   applySecurityMiddleware,
